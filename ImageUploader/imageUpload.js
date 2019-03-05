@@ -2,6 +2,8 @@
 // Tested on Chrome Version 72.0.3626.119
 // Not tested with backend api
 
+// Learning purpose
+
 const startTime = new Date().getTime();
 
 function fileUpload(config) {

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multiple Image Uploader</title>
+</head>
+<body>
+    <input id="uploader" type="file" accept="image/*" multiple>
+    <div id="preview"/>
+    <script src="./imageUpload.js" ></script>
+    <script>
+        window.onload = function(){
+            document.querySelector('#uploader').addEventListener('change', function() {
+                uploadImages({
+                    files: document.querySelector('input[type=file]').files,
+                    serverUrl: 'http://localhost/upload',
+                    previewContainerSelector: '#preview',
+                    headers: {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        mode: "no-cors", 
+                    } 
+                })
+            });
+        }
+    </script>
+</body>
+</html>
