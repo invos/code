@@ -7,11 +7,11 @@
     <title>File Uploader</title>
 </head>
 <body>
-    <input id="uploader" type="file" onchange=""><br>
-    <img id="preview1" src="" style="display:none" height="200" alt="Image preview..." onload="doneLoading('preview1')">
-    <img id="preview2" src="" style="display:none" height="200" alt="Image preview..." onload="doneLoading('preview2')">  
-    <canvas id="preview3" />
-    <script src="./fileUpload.js" ></script>
+    <input id="uploader" type="file" accept="image/*" onchange=""><br>
+    <img id="preview1" src="" style="display:none" height="200" width="200" alt="Image preview..." onload="doneLoading('preview1')">
+    <img id="preview2" src="" style="display:none" height="200" width="200" alt="Image preview..." onload="doneLoading('preview2')">  
+    <canvas id="preview3" height="200" width="200" />
+    <script src="./imageUpload.js" ></script>
     <script>
         window.onload = function(){
             document.querySelector('#uploader').addEventListener('change', function() {
