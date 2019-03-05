@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>File Uploader</title>
+    <title>Image Uploader</title>
 </head>
 <body>
     <input id="uploader" type="file" accept="image/*" onchange=""><br>
@@ -17,7 +17,6 @@
             document.querySelector('#uploader').addEventListener('change', function() {
                 fileUpload({
                     file: document.querySelector('input[type=file]').files[0],
-                    showPreview: true,
                     output: ['#preview1', '#preview2', '#preview3'],
                     serverUrl: 'http://localhost/upload',
                     headers: {

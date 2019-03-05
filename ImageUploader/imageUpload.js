@@ -16,7 +16,7 @@ function fileUpload(config) {
 }
 
 // Using FileReader
-function showPreview1({file, showPreview, output}) {
+function showPreview1({file, output}) {
     const preview1 = output && output[0] && document.querySelector(output[0]);
     if (file && preview1) {
         const reader  = new FileReader();
@@ -29,7 +29,7 @@ function showPreview1({file, showPreview, output}) {
 }
 
 // Using URL.createObjectURL
-function showPreview2({file, showPreview, output}) {
+function showPreview2({file, output}) {
     const preview2 = output && output[1] && document.querySelector(output[1]);
     if (file && preview2) {
         preview2.src = URL.createObjectURL(file);
@@ -38,7 +38,7 @@ function showPreview2({file, showPreview, output}) {
 }
 
 // Using FileReader and Canvas [ Preview and upload ]
-function showPreview3({file, showPreview, output, headers, serverUrl}) {
+function showPreview3({file, output, headers, serverUrl}) {
     const preview3 = output && output[2] && document.querySelector(output[2]);
     if (file && preview3) {
         const reader  = new FileReader();
