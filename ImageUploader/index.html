@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>File Uploader</title>
+</head>
+<body>
+    <input id="uploader" type="file" onchange=""><br>
+    <img id="preview1" src="" style="display:none" height="200" alt="Image preview..." onload="doneLoading('preview1')">
+    <img id="preview2" src="" style="display:none" height="200" alt="Image preview..." onload="doneLoading('preview2')">  
+    <canvas id="preview3" />
+    <script src="./fileUpload.js" ></script>
+    <script>
+        window.onload = function(){
+            document.querySelector('#uploader').addEventListener('change', function() {
+                fileUpload({
+                    file: document.querySelector('input[type=file]').files[0],
+                    showPreview: true,
+                    output: ['#preview1', '#preview2', '#preview3'],
+                    serverUrl: 'http://localhost/upload',
+                    headers: {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        mode: "no-cors", 
+                    } 
+                })
+            });
+        }
+    </script>
+</body>
+</html>
